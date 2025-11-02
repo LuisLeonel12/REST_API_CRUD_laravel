@@ -3,10 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Api\Student_Controller;
+
 //listar los usuarios de la aplicacion
-Route::get('/users', function () {
-    return 'obtaining list of users';
-});
+Route::get('/users', [Student_Controller::class, 'index']  );
+
+
 
 //listar los usuarios de la aplicacion por medio de su id
 Route::get('/users/{id}', function () {
